@@ -4,7 +4,23 @@ An automated pipeline that ran live on [Polymarket](https://polymarket.com)'s Wo
 
 It traded a small real bankroll, built as a proof of concept for one question: **do publicly available soccer rating models carry a tradeable edge over market-implied odds?**
 
-> **The model, sizing and strategy code are private.** This repo is the case study plus the reusable engineering pieces. Trading results are not published here.
+> **The model, sizing and strategy code are private.** This repo is the case study plus the reusable engineering pieces.
+
+## Result
+
+Every position settled by 2026-08-11. Figures come from the wallet's complete Polymarket activity log (every trade and redemption), not the bot's own ledger.
+
+| | |
+|---|---|
+| Resolved trades | 43 |
+| Return on starting bankroll | **+42.8%** |
+| Trades won | 10 of 43 (it almost always bought the underdog) |
+| Without the single largest win | about +3% |
+
+So the answer to the question above is **not proven either way**. One late winner (a knockout-stage
+win, England) supplied about 93% of the profit, and 43 underdog-heavy trades is far too small a
+sample to separate edge from variance. What the run did prove is the engineering: a pipeline that
+found, sized, placed and reconciled real orders through the tournament. What broke along the way is written up below.
 
 ## How it works
 
